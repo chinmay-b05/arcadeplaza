@@ -1,0 +1,261 @@
+:root {
+  --bg-color: hsl(0, 0%, 15%);
+  --text-color: hsl(0, 0%, 83%);
+  --accent-color:hsl(306, 76%, 46%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 1s;
+}
+
+body {
+  display: flex;
+  align-items: center;
+ 
+  flex-direction: column;
+  background: var(--bg-color);
+  color: var(--text-color);
+  height: fit-content;
+}
+
+#hint {
+  position: fixed;
+  right: 0;
+  width: 10%;
+  display: flex;
+  align-items: flex-end;
+  
+  
+  flex-direction: column;
+}
+
+.hint {
+  width: fit-content;
+  padding: 0.2rem;
+  padding-left: 0.4rem;
+  margin-bottom: 0.5rem;
+  padding-right: 2rem;
+  border-radius: 15px 0 0 15px;
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
+#hint-text {
+  margin: auto;
+  width: fit-content;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.games {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.levels {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 1rem;
+  text-align: left;
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin: 3vh;
+}
+
+span {
+  color:hsl(306, 76%, 46%);
+}
+
+.result {
+  transition: 1s;
+}
+
+.resultSuccess {
+  color: hsl(123, 64%, 43%);
+  font-size: larger;
+  animation: success 1s linear 5;
+}
+
+.tryAgain {
+  color: hsl(64, 54%, 63%);
+  font-size: larger;
+  animation: tryAgain 0.2s ease-in 2;
+}
+
+.inputValue {
+  color:hsl(306, 76%, 46%);
+}
+
+#number {
+  border: 0;
+  outline: 0;
+  width: 23.01%;
+  margin: 2.5rem auto;
+  padding-bottom: 1.5vh;
+  background: transparent;
+  color: hsl(24, 55%, 43%);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  caret-color: hsl(24, 55%, 43%);
+  border-bottom: 10px double hsl(24, 55%, 43%);
+}
+ 
+.points {
+  font-size: 4rem;
+  color: hsl(24, 55%, 43%);
+}
+
+.safe {
+  margin: 1rem;
+  color: hsl(120, 60%, 25%);
+}
+
+.dangerZone {
+  margin: 1;
+  color: hsl(0, 60%, 50%);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameOver,
+.hint-container {
+  display: none;
+  position: fixed;
+  text-align: center;
+  width: fit-content;
+  text-align: center;
+  height: fit-content;
+  color: hsl(24, 55%, 43%);
+  border-radius: 15px;
+  background-color: #151515;
+  animation: zoom 1s ease-in forwards;
+}
+
+.showHintContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.gameOver h3 {
+  margin-bottom: 2.5vh;
+}
+
+/* Result animation, failure or success */
+
+@keyframes success {
+  from {
+    color: hsl(123, 64%, 43%);
+    font-size: larger;
+  }
+  40% {
+    font-size: medium;
+  }
+  80% {
+    font-size: larger;
+  }
+}
+
+@keyframes tryAgain {
+  0% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  80% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    padding: 1.5vh 11.5vh;
+    border: 2px double hsl(24, 55%, 43%);
+  }
+
+  40% {
+    padding: 2.5vh 12.5vh;
+    border: 5px double hsl(24, 55%, 43%);
+  }
+
+  100% {
+    padding: 5vh 15vh;
+    border: 10px double hsl(24, 55%, 43%);
+  }
+}
+
+/* made responsive for mobile */
+
+@media screen and (max-width: 570px) {
+  body {
+    height: fit-content;
+  }
+
+  .game-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .levels {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #number {
+    width: 75%;
+  }
+
+  #result {
+    margin: 0.3vh 1vw;
+  }
+
+  #try {
+    font-size: large;
+  }
+
+  #number {
+    font-size: 1.2rem;
+  }
+
+  #hint {
+    margin-top: 2.5rem;
+  }
+
+  .hint-container {
+    width: 90%;
+  }
+}
