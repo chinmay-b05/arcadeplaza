@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Press Start 2P', sans-serif;
+            background-color: #f5f5f5;
+        }
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        .game {
+            background-color: #000000;
+            border: 1px solid #ddd;
+            color: #ddd;
+            border-radius: 5px;
+            margin: 0 10px 20px;
+            padding: 20px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+        }
+        .game img {
+            max-width: 100%;
+        }
+        .like-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #777;
+        }
+        .liked {
+            color: red;
+        }
+        .rating {
+            color: #FFD700; /* Gold color */
+            font-size: 20px;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            background: #333;
+            color: #fff;
+            width: 250px;
+            overflow-y: scroll;
+            padding-top: 20px;
+            z-index: 1;
+        }
+        .category {
+            padding: 10px;
+        }
+        .category a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .open-button {
+            position: fixed;
+            top: 10px;
+            left: 25px;
+            background-color: #e45fc7;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .actuve{
+         color: aliceblue;
+        }
+    </style>
+</head>
+<body style="background-image: linear-gradient(to right,rgb(0, 0, 0,0.8),rgb(48, 10, 48,0.8),rgb(128, 0, 128,0.8));" >
+    <div class="container-fluid" style="background-image:linear-gradient(rgb(0, 0, 0,0.8),rgb(48, 10, 48,0.6),rgb(128, 0, 128,0.6));">
+      <div class="collapse navbar-collapse" id="myNavbar" style="font-family: 'Press Start 2P', cursive; font-size: 16px;color: rgb(204, 0, 255);">
+       <h2 style="font-family: 'Press Start 2P', cursive; font-size: 30px;color: rgb(204, 0, 255);text-align: center;">Arcade Plaza</h2> 
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li ><a  href="games1.html">Mini-Games</a> </li>
+          <li><a href="#egame.html"class="actuve">Game-Store</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="container-fluid" style="padding: 0; margin: 0;">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" style="padding: 0; margin: 0;">
+        
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="header1.jpg" alt="game1" style="width:100%">
+                </div>
+                <div class="item">
+                    <img src="header2.jpg" alt="game2" style="width:100%">
+                </div>
+                <div class="item">
+                    <img src="header3.png" alt="game3" style="width:100%">
+                </div>
+                <div class="item">
+                    <img src="header4.jpg" alt="game4" style="width:100%">
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+    <button class="open-button" onclick="toggleSidebar(open)">Categories</button>
+    <div class="sidebar">
+        <!-- Added a Close button -->
+        <button class="close-button" onclick="toggleSidebar(false)" style="background-color:rgb(136, 69, 136,0.4);">Close</button>
+        <div class="category">
+            <a href="#">Action</a>
+            <a href="#">Adventure</a>
+            <a href="#">RPG</a>
+            <a href="#">Simulation</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="game-container">
+            <div class="game">
+                <img src="game1.jpg" alt="Game 1">
+                <h4>Game Title 1</h4>
+                <p>Description of Game 1.</p>
+                <div class="rating" style="font-size: 13px;">
+                    Rating: 
+                    <i class="glyphicon glyphicon-star"></i>
+                    <i class="glyphicon glyphicon-star"></i>
+                    <i class="glyphicon glyphicon-star"></i>
+                    <i class="glyphicon glyphicon-star"></i>
+                    <i class="glyphicon glyphicon-star-empty"></i>
+                </div>
+                <button class="like-button" onclick="toggleLike(this)">
+                    <i class="glyphicon glyphicon glyphicon-heart"></i>
+                </button>
+            </div>
+            <div class="game">
+                <img src="game2.jpg" alt="Game 2">
+                <h4>Game Title 2</h4>
+                <p>Description of Game 2.</p>
+                <div class="rating"style="font-size: 13px;">
+                    Rating: 
+                    <i class="glyphicon glyphicon-star"></i>
+                    <i class="glyphicon glyphicon-star"></i>
+                    <i class="glyphicon glyphicon-star"></i>
+                    <i class="glyphicon glyphicon-star-empty"></i>
+                    <i class="glyphicon glyphicon-star-empty"></i>
+                </div>
+                <button class="like-button" onclick="toggleLike(this)">
+                    <i class="glyphicon glyphicon glyphicon-heart"></i>
+                </button>
+            </div>
+            <div class="game">
+                <img src="game3.jpg" alt="Game 3">
+                <h4>Game Title 1</h4>
+                <p>Description of Game 1.</p>
+                <div class="rating"style="font-size: 13px;">
+                    Rating: 
+                    <i class="glyphicon glyphicon-star"></i>
+                    <i class="glyphicon glyphicon-star"></i>
+                    <i class="glyphicon glyphicon-star"></i>
+                    <i class="glyphicon glyphicon-star"></i>
+                    <i class="glyphicon glyphicon-star-empty"></i>
+                </div>
+                <button class="like-button" onclick="toggleLike(this)">
+                    <i class="glyphicon glyphicon glyphicon-heart"></i>
+                </button>
+            </div>
+            <!-- Add more game entries as needed -->
+        </div>
+    </div>
+
+    <script>
+        function toggleLike(button) {
+            var icon = button.querySelector('i');
+            if (icon.classList.contains('liked')) {
+                icon.classList.remove('liked');
+            } else {
+                icon.classList.add('liked');
+            }
+        }
+
+        function toggleSidebar(open) {
+        var sidebar = document.querySelector('.sidebar');
+        var openButton = document.querySelector('.open-button');
+        var closeButton = document.querySelector('.close-button');
+        if (open) {
+            sidebar.style.left = '0';
+            openButton.style.display = 'none';
+            closeButton.style.display = 'block';
+        } else {
+            sidebar.style.left = '-250px';
+            openButton.style.display = 'block';
+            closeButton.style.display = 'none';
+        }
+        }
+
+    </script>
+</body>
+</html>
