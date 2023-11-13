@@ -10,6 +10,23 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
+  .image-writeup-block {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    background-color: #f8f9fa; 
+    border-radius: 10px; 
+    padding: 20px;
+    height: 8cm; 
+  }
+  .image-writeup-block img {
+    max-width: 100%;
+    border-radius: 5px; 
+    margin-right: 20px;
+  }
+  .writeup {
+    flex-grow: 1;
+  }
   .actuve{
     color: aliceblue;
   }
@@ -61,4 +78,53 @@
       </a>
     </div>
   </div>
+  <center>
+   <h1  style="font-family: 'Press Start 2P', cursive; font-size: 25px;color: rgb(204, 0, 255);">Welcome to Arcadeplaza!</h1>
+  </center>
+  <div class="container-fluid" style="padding: 20px; margin: 3cm;background-color:#f8f9fa;height: 15cm;border-radius: 20px;">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" style="padding: 0; margin: 0;border-radius: 20px;">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+    
+      <div class="carousel-inner">
+        <div class="item active">
+          <center><img src="homegameslide/tic-tac-toe.webp" alt="Nature" style="width:50%"></center>
+        </div>
+        <div class="item">
+          <center><img src="homegameslide/wouldurather.jpg" alt="Snow" style="width:50%"></center>
+        </div>
+        <div class="item">
+          <center><img src="homegameslide/rockpapersci.png" alt="Mountains" style="width:50%"></center>
+        </div>
+        <div class="item">
+          <center><img src="homegameslide/guessnumber.png" alt="Mountains" style="width:50%"></center>
+        </div>
+      </div>
+    
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+    <center><h1  style="font-family: 'Press Start 2P', cursive; font-size: 40px;color: rgb(0, 0, 0);text-align: center;">You can visit the mini games you are intrested in!</h1>
+     <button  style="font-family: 'Press Start 2P', cursive; font-size: 30px;color: rgb(45, 3, 37);text-align: center;background-color: rgb(30, 24, 35);"><a  href="games1.html">Mini-Games</a></button>
+    </center>
+  </div>
+  <div class="container">
+    <div class="image-writeup-block">
+        <img src="homegameslide/gamestore.png" alt="Image">
+        <div class="writeup">
+            <h1>Game Store</h1>
+            <p style="font-size: large;">Find your game,like it and know it's rating through our games section</p>
+            <br>
+            <button><a href="egame.html">Visit-Store</a></button>
+        </div>
+    </div>
+</div>
 </body>
