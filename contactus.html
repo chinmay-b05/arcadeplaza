@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .contact-info {
+            width: 30%;
+        }
+
+        .comment-box {
+            width: 60%;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            z-index: 1000;
+        }
+        .actuve{
+    color: aliceblue;
+  }
+    </style>
+</head>
+<body style="background-image: linear-gradient(to right,rgb(0, 0, 0,0.8),rgb(48, 10, 48,0.8),rgb(128, 0, 128,0.8));" >
+    <div class="container-fluid" style="background-image:linear-gradient(rgb(0, 0, 0,0.8),rgb(48, 10, 48,0.6),rgb(128, 0, 128,0.6));">
+      <div class="collapse navbar-collapse" id="myNavbar" style="font-family: 'Press Start 2P', cursive; font-size: 25px;color: rgb(204, 0, 255);">
+            <h2 style="font-family: 'Press Start 2P', cursive; font-size: 40px;color: rgb(204, 0, 255);text-align: center;">Arcade Plaza</h2> 
+            <ul class="nav navbar-nav">
+              <li ><a href="index.html">Home</a></li>
+              <li ><a  href="games1.html">Mini-Games</a> </li>
+              <li><a href="egame.html">Game-Store</a></li>
+              <li><a href="#contactus.html"class="actuve">Contact-Us</a></li>
+            </ul>
+      </div>
+    </div>
+
+    <div class="container" style="color: aliceblue;">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>Phone: +1 123-456-7890</p>
+                <p>Email: info@example.com</p>
+                <p>Address: 123 Street, City</p>
+            </div>
+            <div class="comment-box">
+                <h2>Leave a Comment</h2>
+                <form id="commentForm">
+                    <div class="form-group">
+                        <label for="comment">Comment:</label>
+                        <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="submitComment()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup" style="height: 3cm;width: 8cm;background-image: linear-gradient(to right,rgb(0, 0, 0,0.8),rgb(48, 10, 48,0.8),rgb(128, 0, 128,0.8));">
+        <p>Your comment has been sent!<br>We will revive it. <br>Thank You!</p>
+    </div>
+
+    <footer class="footer" style="background-color: rgb(19, 19, 19);color: aliceblue;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +1 123-456-7890</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="games1.html">Mini-Games</a></li>
+                        <li><a href="egame.html">Game-Store</a></li>
+                        <li><a href="#contactus.html">Contact-Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+     </footer>
+    <script>
+        function submitComment() {
+            document.getElementById('popup').style.display = 'block';
+            setTimeout(function () {
+                document.getElementById('popup').style.display = 'none';
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
